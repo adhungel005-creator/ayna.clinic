@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayna – The Skin, Hair and Laser Clinic</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Ayna – The Skin, Hair and Laser Clinic | Dr. Bibisha Baaniya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -13,61 +13,82 @@
             --dark-green: #4A9A2A;
             --gold-accent: #C89B3C;
             --text-dark: #333333;
-            --bg-alt: #F9F9F9;
+            --bg-alt: #F4F7F2;
+            --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { color: #555; line-height: 1.6; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Fixed Glitchy Header */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+
+        /* HEADER FIX (Resolves image_5bb85c.png) */
         header { 
             position: fixed; top: 0; width: 100%; 
-            background: rgba(255,255,255,0.98); 
-            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            background: var(--white); 
+            z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.08); 
         }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
-        .logo img { height: 50px; }
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+        .logo img { height: 55px; }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 30px; 
+            list-style: none; /* Removes bullets from image_5bb85c.png */
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 500; 
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
         .nav-links a:hover { color: var(--primary-green); }
 
-        /* Sections */
-        section { padding: 80px 0; }
+        /* SECTIONS */
+        section { padding: 100px 0; }
         .hero { 
-            height: 90vh; display: flex; align-items: center; text-align: center;
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('viber_image_2025-01-04_11-43-17-438.jpg') center/cover;
+            height: 85vh; display: flex; align-items: center; text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('viber_image_2025-01-04_11-43-17-438.jpg') center/cover;
+            margin-top: 60px;
         }
-        .hero h1 { font-size: 3.5rem; color: var(--dark-green); margin-bottom: 20px; }
 
-        /* Fixed Gallery Glitch */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .gallery-item { border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        /* DOCTOR SECTION ENHANCEMENT */
+        .doctor-profile { background: var(--bg-alt); }
+        .doctor-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .doctor-image { flex: 1; min-width: 320px; }
+        .doctor-image img { 
+            width: 100%; border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 8px solid var(--white);
+        }
+        .doctor-content { flex: 1.5; min-width: 320px; }
+        .badge { 
+            background: var(--gold-accent); color: white; padding: 5px 15px; 
+            border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 15px;
+        }
+        .doctor-content h2 { font-size: 2.8rem; color: var(--dark-green); margin-bottom: 10px; }
+        .doctor-content h3 { color: var(--gold-accent); margin-bottom: 20px; font-weight: 500; }
+        .doctor-list { list-style: none; margin: 25px 0; }
+        .doctor-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+        .doctor-list i { color: var(--primary-green); font-size: 1.2rem; }
 
-        /* Floating Components */
+        /* FLOATING WHATSAPP */
         .whatsapp-float { 
-            position: fixed; bottom: 30px; right: 30px; 
-            background: #25d366; color: white; width: 60px; height: 60px; 
+            position: fixed; bottom: 35px; right: 35px; 
+            background: #25d366; color: white; width: 65px; height: 65px; 
             border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-            font-size: 30px; z-index: 2000; transition: 0.3s; text-decoration: none;
+            font-size: 32px; z-index: 2000; transition: 0.3s; text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 
-        /* Forms */
-        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .form-group { margin-bottom: 15px; }
-        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+        /* BUTTONS */
         .btn { 
-            background: var(--primary-green); color: white; padding: 12px 30px; 
-            border: none; border-radius: 25px; cursor: pointer; font-weight: 600; transition: 0.3s; 
+            background: var(--primary-green); color: white; padding: 15px 35px; 
+            border-radius: 30px; text-decoration: none; font-weight: 600; 
+            display: inline-block; transition: 0.3s; border: none; cursor: pointer;
         }
-        .btn:hover { background: var(--gold-accent); }
-
-        @media (max-width: 768px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-        }
+        .btn:hover { background: var(--gold-accent); box-shadow: 0 5px 15px rgba(200, 155, 60, 0.4); }
     </style>
 </head>
 <body>
@@ -78,56 +99,87 @@
 
     <header>
         <nav class="container">
-            <div class="logo"><img src="ayna.jpg" alt="Logo"></div>
+            <div class="logo"><img src="ayna.jpg" alt="Ayna Clinic Logo"></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#results">Results</a></li>
-                <li><a href="#doctor">Doctor</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#doctor">Dr. Baaniya</a></li>
+                <li><a href="#contact">Book Now</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="container">
-            <h1>Ayna Clinic</h1>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Premium Skin, Hair & Laser Solutions in Biratnagar.</p>
-            <a href="#contact" class="btn">Book Appointment</a>
+            <h1 style="font-size: 4rem; color: var(--dark-green); line-height: 1.1;">Ayna Skin & Hair Clinic</h1>
+            <p style="font-size: 1.4rem; margin: 20px 0 40px; font-weight: 500;">Advanced Laser & Aesthetic Dermatology in Biratnagar</p>
+            <a href="#contact" class="btn">Start Your Transformation</a>
         </div>
     </section>
 
-    <section id="results" class="container">
-        <h2 style="text-align:center; color:var(--dark-green);">Transformation Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="ayna.jpg" alt="Result 1"></div>
-            <div class="gallery-item"><img src="ayna.jpg" alt="Result 2"></div>
-            <div class="gallery-item"><img src="ayna.jpg" alt="Result 3"></div>
-        </div>
-    </section>
-
-    <section id="contact" style="background: var(--bg-alt);">
+    <!-- EXPANDED DOCTOR SECTION -->
+    <section id="doctor" class="doctor-profile">
         <div class="container">
-            <div class="contact-wrapper">
-                <div>
-                    <h2 style="color:var(--dark-green); margin-bottom:20px;">Get in Touch</h2>
-                    <form id="appointmentForm">
-                        <div class="form-group"><input type="text" id="name" placeholder="Full Name" required></div>
-                        <div class="form-group"><input type="tel" id="phone" placeholder="Phone Number" required></div>
-                        <div class="form-group">
-                            <select id="service">
-                                <option value="skin">Skin Treatment</option>
-                                <option value="hair">Hair Treatment</option>
-                                <option value="laser">Laser Treatment</option>
-                            </select>
-                        </div>
-                        <div class="form-group"><textarea id="message" rows="4" placeholder="Your concerns"></textarea></div>
-                        <button type="submit" id="submitBtn" class="btn">Send Request</button>
-                    </form>
+            <div class="doctor-flex">
+                <div class="doctor-image">
+                    <img src="274863845_110892188200818_7880054988556601557_n.jpg" alt="Dr. Bibisha Baaniya">
                 </div>
+                <div class="doctor-content">
+                    <span class="badge">Chief Dermatologist</span>
+                    <h2>Dr. Bibisha Baaniya</h2>
+                    <h3>MD Dermatology & Aesthetic Medicine</h3>
+                    <p>Dr. Bibisha Baaniya is a highly qualified and experienced dermatologist dedicated to providing expert diagnosis and treatment for a wide array of skin and hair conditions. At Ayna Clinic, she blends medical science with a personalized, patient-centered approach to ensure natural-looking and effective results.</p>
+                    <p style="margin-top: 15px;">She is committed to staying at the forefront of dermatological advancements, ensuring that every patient in Biratnagar receives modern, safe, and world-class care.</p>
+                    
+                    <ul class="doctor-list">
+                        <li><i class="fas fa-certificate"></i> Certified Laser Therapy Specialist</li>
+                        <li><i class="fas fa-microscope"></i> Expert in Clinical Hair Restoration</li>
+                        <li><i class="fas fa-award"></i> Specialist in Anti-Aging Solutions</li>
+                        <li><i class="fas fa-user-md"></i> 500+ Successful Transformations</li>
+                    </ul>
+                    <a href="#contact" class="btn">Consult with Dr. Baaniya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section id="results" class="container">
+        <h2 style="text-align:center; font-size: 2.5rem; color: var(--dark-green);">Transformation Results</h2>
+        <p style="text-align:center; color: var(--gold-accent); letter-spacing: 2px; margin-bottom: 40px;">PROVEN EXCELLENCE IN CARE</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div style="border-radius:15px; overflow:hidden; box-shadow:0 10px 20px rgba(0,0,0,0.05);">
+                <img src="ayna.jpg" style="width:100%; display:block;" alt="Result 1">
+                <div style="padding:15px; background:white; text-align:center; font-weight:600;">Acne Scar Revision</div>
+            </div>
+            <div style="border-radius:15px; overflow:hidden; box-shadow:0 10px 20px rgba(0,0,0,0.05);">
+                <img src="ayna.jpg" style="width:100%; display:block;" alt="Result 2">
+                <div style="padding:15px; background:white; text-align:center; font-weight:600;">Laser Hair Removal</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SECTION -->
+    <section id="contact" style="background: white;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px;">
+                <form id="appointmentForm">
+                    <h2 style="color:var(--dark-green); margin-bottom: 10px;">Book Appointment</h2>
+                    <p style="margin-bottom: 25px;">Secure your slot for a premium consultation.</p>
+                    <input type="text" id="name" placeholder="Your Name" required style="width:100%; padding:15px; margin-bottom:15px; border:1px solid #ddd; border-radius:10px;">
+                    <input type="tel" id="phone" placeholder="Mobile Number" required style="width:100%; padding:15px; margin-bottom:15px; border:1px solid #ddd; border-radius:10px;">
+                    <select id="service" style="width:100%; padding:15px; margin-bottom:15px; border:1px solid #ddd; border-radius:10px;">
+                        <option value="consultation">Medical Consultation</option>
+                        <option value="laser">Laser Treatment</option>
+                        <option value="hair">Hair Restoration</option>
+                    </select>
+                    <textarea id="message" placeholder="Describe your concern" rows="4" style="width:100%; padding:15px; margin-bottom:15px; border:1px solid #ddd; border-radius:10px;"></textarea>
+                    <button type="submit" id="submitBtn" class="btn" style="width:100%;">Confirm My Booking</button>
+                </form>
                 <div>
-                    <h2 style="color:var(--dark-green); margin-bottom:20px;">Location</h2>
-                    <p>Rangeli Road, Biratnagar, Nepal</p>
-                    <div style="height:300px; background:#ddd; border-radius:12px; margin-top:20px; overflow:hidden;">
+                    <h2 style="color:var(--dark-green); margin-bottom: 15px;">Find Us</h2>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--gold-accent);"></i> Rangeli Road, Biratnagar, Nepal</p>
+                    <div style="height:350px; border-radius:20px; overflow:hidden; margin-top:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.034562095346!2d87.283186!3d26.454477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef7446ff360e21%3A0x6406e93910c2423!2sBiratnagar!5e0!3m2!1sen!2snp!4v1714710000000!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
@@ -135,20 +187,21 @@
         </div>
     </section>
 
-    <footer style="background:#333; color:white; padding:40px 0; text-align:center;">
-        <p>&copy; 2026 Ayna Clinic. All rights reserved.</p>
+    <footer style="background:#222; color:white; padding:50px 0; text-align:center;">
+        <div class="container">
+            <p style="opacity:0.8;">&copy; 2026 Ayna – The Skin, Hair and Laser Clinic. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
         const form = document.getElementById('appointmentForm');
         const submitBtn = document.getElementById('submitBtn');
-        // Ensure this matches your Render URL exactly
         const API_URL = "https://ayna-backend-1-kjy2.onrender.com/api/appointments/";
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             submitBtn.disabled = true;
-            submitBtn.innerText = "Sending...";
+            submitBtn.innerText = "Securing Slot...";
 
             const formData = {
                 name: document.getElementById('name').value,
@@ -165,16 +218,16 @@
                 });
 
                 if (response.ok) {
-                    alert("Success! We will contact you shortly.");
+                    alert("Success! Your request has reached Dr. Baaniya's team.");
                     form.reset();
                 } else {
-                    alert("Submission failed. Try WhatsApp for direct booking.");
+                    alert("Submission failed. Please use WhatsApp for a direct booking.");
                 }
             } catch (err) {
-                alert("Connection error. Is the backend live?");
+                alert("Connection failed. Check if your internet is active or use WhatsApp.");
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerText = "Send Request";
+                submitBtn.innerText = "Confirm My Booking";
             }
         });
     </script>
